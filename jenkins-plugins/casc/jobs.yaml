@@ -1,0 +1,53 @@
+jenkins:
+  systemMessage: "Simple seed job example"
+jobs:
+  - script: >
+      pipelineJob('Job1') {
+        definition {
+          cps {
+            script('''
+              pipeline {
+                  agent any
+                      stages {
+                          stage('Stage 1') {
+                              steps {
+                                  echo 'Hello'
+                              }
+                          }
+                          stage('Stage 2') {
+                              steps {
+                                  echo 'DevOps'
+                              }
+                          }
+                      }
+              }
+            '''.stripIndent())
+            sandbox()     
+          }
+        }
+      }
+  - script: >
+      pipelineJob('Job2') {
+        definition {
+          cps {
+            script('''
+              pipeline {
+                  agent any
+                      stages {
+                          stage('Stage 1') {
+                              steps {
+                                  echo 'Bonjour'
+                              }
+                          }
+                          stage('Stage 2') {
+                              steps {
+                                  echo 'DevOps'
+                              }
+                          }
+                      }
+              }
+            '''.stripIndent())
+            sandbox()     
+          }
+        }
+      }
