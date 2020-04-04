@@ -4,12 +4,19 @@ jenkins:
   scmCheckoutRetryCount: 2
   mode: NORMAL
 
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: admin
+          password: admin
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "Overall/Administer:authenticated"
+        
   globalNodeProperties:
     - envVars:
         env:
           - key: FOO
             value: BAR
-
-  authorizationStrategy:
-    loggedInUsersCanDoAnything:
-      allowAnonymousRead: false
