@@ -1,5 +1,3 @@
-jenkins:
-  systemMessage: "Simple seed job example"
 jobs:
   - script: >
       pipelineJob('Job1') {
