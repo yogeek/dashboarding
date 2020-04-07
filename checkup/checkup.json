@@ -1,0 +1,12 @@
+{
+	"checkers": [{
+		"type": "http",
+		"endpoint_name": "Nginx HTTP",
+		"endpoint_url": "http://nginx",
+		"attempts": 5
+	}],
+	"storage": {
+		"provider": "fs",
+		"dir": "/app/web/storage"
+	}
+}

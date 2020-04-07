@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: demo-server
+    restart: always
+    ports:
+      - "80:80"
+    # network_mode: host

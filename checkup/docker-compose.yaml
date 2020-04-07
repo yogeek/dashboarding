@@ -1,0 +1,21 @@
+version: '3.4'
+services:
+
+  checkup:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: checkup
+    network_mode: host
+    command: ["every","5s"]
+    volumes:
+      - checkup-data:/app/web/
+
+  caddy:
+    image: caddy/caddy
+    network_mode: host
+    volumes:
+      - checkup-data:/usr/share/caddy/
+
+volumes:
+  checkup-data:
