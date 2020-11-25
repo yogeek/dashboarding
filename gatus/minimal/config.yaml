@@ -1,0 +1,8 @@
+services:
+  - name: example
+    url: http://example.org
+    interval: 1s
+    conditions:
+      - "[STATUS] == 200"
+      - "[RESPONSE_TIME] < 300"
+      # - "[CERTIFICATE_EXPIRATION] > 48h"
